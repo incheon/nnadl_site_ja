@@ -1933,10 +1933,24 @@ MNISTのデータセットをPythonで簡単にロード及び複製ができる
   (<a href="http://www.deeplearning.net/tutorial/gettingstarted.html">link</a>).</span>.</p><p></p><p>Apart from the MNIST data we also need a Python library called
 <a href="http://numpy.org">Numpy</a>, for doing fast linear algebra.  If you
 don't already have Numpy installed, you can get it
-<a href="http://www.scipy.org/install.html">here</a>.</p><p>Let me explain the core features of the neural networks code, before
+<a href="http://www.scipy.org/install.html">here</a>. -->
+
+MNISTデータセットの他に、我々には高速な線形代数の計算のため
+<a href="http://numpy.org">Numpy</a>と呼ばれるPythonライブラリが必要です。
+もしまだNumpyをインストールしていなければ
+<a href="http://www.scipy.org/install.html">ここ</a>から入手することができます。
+</p>
+<p>
+<!-- Let me explain the core features of the neural networks code, before
 giving a full listing, below.  The centrepiece is a <tt>Network</tt>
 class, which we use to represent a neural network.  Here's the code we
-use to initialize a <tt>Network</tt> object:</p><p>
+use to initialize a <tt>Network</tt> object: -->
+
+全てのコードを説明する前に、ニューラルネットワークのコードの特徴を説明させて下さい。
+最も重要なのはニューラルネットワークを表すのに用いる<tt>Network</tt>クラスです。
+以下は<tt>Network</tt>オブジェクトを初期化するためのコードです:
+</p>
+<p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">Network</span><span class="p">():</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sizes</span><span class="p">):</span>
