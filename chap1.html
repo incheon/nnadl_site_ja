@@ -1878,13 +1878,29 @@ accessible, and could be mastered by anyone.</p><p></p><p>
   <!-- If you don't use <tt>git</tt> then you can download the data and code
   <a href="https://github.com/mnielsen/neural-networks-and-deep-learning/archive/master.zip">here</a>. -->
 </p>
-<p>Incidentally, when I described the MNIST data earlier, I said it was
+<p>
+ところで最初の方でMNISTデータについて述べた時、
+私はデータセットが60000の訓練用画像と10000のテスト用画像に分けられていると述べました。
+これはMNISTの公式な説明にある通りですが、今回はこれと若干異なる分け方にしようと思います。
+テストデータはそのままですが、60000の訓練データセットをさらに2つのグループ:
+ うち50000個をニューラルネットワークの訓練用の画像に、
+そして10000個を<em>バリデーション用データセット</em>に分けます。
+<!-- Incidentally, when I described the MNIST data earlier, I said it was
 split into 60,000 training images, and 10,000 test images.  That's the
 official MNIST description.  Actually, we're going to split the data a
 little differently.  We'll leave the test images as is, but split the
 60,000-image MNIST training set into two parts: a set of 50,000
 images, which we'll use to train our neural network, and a separate
-10,000 image <em>validation set</em>.  We won't
+10,000 image <em>validation set</em>. -->
+
+バリデーション用データはこの章では用いませんが、
+本書の後半で、我々のニューラルネットワークの<em>ハイパーパラメータ</em>
+(我々の学習アルゴリズムから直接導出されない学習率など)を確かめるのにこれが有用であることを示そうと思います。
+バリデーション用データは本来のMNISTの仕様にはありませんが、多くの人がMNISTを方法を用いており、
+バリデーション用データの利用はニューラルネットワークにおいては一般的なのです。
+これから私が"MNISTの訓練データ"と述べた時は、
+60000個のデータセットではなく50000個のデータセットの方を指していると解釈して下さい*
+<!-- We won't
 use the validation data in this chapter, but later in the book we'll
 find it useful in figuring out how to set certain
 <em>hyper-parameters</em> of the neural network - things like the
@@ -1894,8 +1910,17 @@ original MNIST specification, many people use MNIST in this fashion,
 and the use of validation data is common in neural networks.  When I
 refer to the "MNIST training data" from now on, I'll be referring to
 our 50,000 image data set, not the original 60,000 image data
-set*<span class="marginnote">
-*As noted earlier, the MNIST data set is based on two data
+set* -->
+<span class="marginnote">
+前述のように、MNISTのデータセットはNIST(アメリカ国立標準技術研究所)により収集された2つのデータセットをベースとしています。
+MNISTを作成するにあたり、Yann LeCunとCorinna Cortes、そしてChristopher J. C. Burgesによって、
+NISTのデータセットは不要部分を削ぎ落としてより手軽なフォーマットへと変換されました。
+詳細については<a href="http://yann.lecun.com/exdb/mnist/">こちらのリンク</a>をご覧ください。
+私のリポジトリにあるデータセットは、
+MNISTのデータセットをPythonで簡単にロード及び複製ができるような型式になっています。
+このデータ型式を、私はモントリオール大学のLISA機械学習研究所から得ました。
+(リンクは<a href="http://www.deeplearning.net/tutorial/gettingstarted.html">こちら</a>)
+<!-- *As noted earlier, the MNIST data set is based on two data
   sets collected by NIST, the United States' National Institute of
   Standards and Technology.  To construct MNIST the NIST data sets
   were stripped down and put into a more convenient format by Yann
